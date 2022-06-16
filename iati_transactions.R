@@ -21,8 +21,4 @@ hold_df <- rbindlist(hold)
 
 filename = paste0("transactions-",Sys.Date())
 
-write.csv(hold_df,paste0(filename,".csv"))
-
 save(hold_df, file=paste0(filename,".RDa"))
-
-# We now have a dataset of iati-identifiers with their budget information for all budgets 2021 onwards.
