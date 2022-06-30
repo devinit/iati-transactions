@@ -2,9 +2,9 @@ name: Take a snapshot of transaction data
 
 on:
   # Run every day at 12am
-  schedule:
-    - cron: "0 11 * * *"
-  # workflow_dispatch:
+  # schedule:
+  #   - cron: "0 11 * * *"
+  workflow_dispatch:
 
 jobs:
   generate-data:
@@ -14,9 +14,9 @@ jobs:
 
       - uses: actions/checkout@v2
 
-      - name: Install dependencies
+      - name: Update dependencies
         run: |
-          sudo apt-get install libcurl4-openssl-dev
+          sudo apt-get update libcurl4-openssl-dev
 
       - uses: r-lib/actions/setup-r@master
         with:
